@@ -1,0 +1,98 @@
+name: Render environments
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "*.toml"
+
+permissions:
+  contents: write
+
+jobs:
+  detect-changes:
+    runs-on: ubuntu-latest
+    outputs:
+      lockfiles: ${{ steps.changed.outputs.lockfiles }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 2
+
+      - id: changed
+        shell: bash
+        run: |
+          if git rev-parse HEAD~1 >/dev/null 2>&1; then
+            files=$(git diff --name-only HEAD~1 HEAD -- '*.toml' | tr '\n' ' ')
+          else
+            files=$(git ls-files '*.toml' | tr '\n' ' ')
+          fi
+          echo "lockfiles=${files}" >> "$GITHUB_OUTPUT"
+
+  render:
+    needs: detect-changes
+    runs-on: ubuntu-latest
+    if: needs.detect-changes.outputs.lockfiles != ''
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Checkout platform
+        uses: actions/checkout@v4
+        with:
+          repository: henosis-playground/platform
+          path: _platform
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 11
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+          cache: pnpm
+          cache-dependency-path: _platform/pnpm-lock.yaml
+
+      - name: Install and build platform
+        working-directory: _platform
+        run: |
+          pnpm install
+          pnpm --filter @henosis/renderer build
+
+      - name: Render changed lockfiles
+        shell: bash
+        run: |
+          for lockfile in ${{ needs.detect-changes.outputs.lockfiles }}; do
+            echo "Rendering ${lockfile}"
+            node _platform/packages/renderer/dist/render.js "${lockfile}" \
+              --output-dir "rendered/${lockfile%.toml}"
+          done
+
+      - name: Push rendered output to env branches
+        shell: bash
+        run: |
+          git config user.email "henosis-render@github-actions"
+          git config user.name "Henosis Renderer"
+
+          for lockfile in ${{ needs.detect-changes.outputs.lockfiles }}; do
+            env_id="${lockfile%.toml}"
+            branch="env/${env_id}"
+            worktree="/tmp/henosis-env-${env_id}"
+
+            rm -rf "${worktree}"
+            git fetch origin "${branch}" || true
+            if git rev-parse --verify "origin/${branch}" >/dev/null 2>&1; then
+              git worktree add "${worktree}" -B "${branch}" "origin/${branch}"
+            else
+              git worktree add "${worktree}" --detach
+              git -C "${worktree}" checkout --orphan "${branch}"
+            fi
+
+            find "${worktree}" -mindepth 1 -maxdepth 1 ! -name .git -exec rm -rf {} +
+            cp -r "rendered/${env_id}/." "${worktree}/"
+
+            git -C "${worktree}" add .
+            git -C "${worktree}" commit -m "Render ${env_id} from ${GITHUB_SHA::8}" || true
+            git -C "${worktree}" push origin "HEAD:${branch}"
+            git worktree remove "${worktree}" --force
+          done

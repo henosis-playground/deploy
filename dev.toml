@@ -1,1 +1,12 @@
-# Dev environment lockfile. Schema is defined by the bot/renderer; schema TBD.
+[environment]
+id = "dev"
+
+[components.service-a]
+repo = "henosis-playground/service-a"
+ref = "242e3cd508e3c1c8257721dba477d990141d46f7"
+digest = "sha256:9c0e72026177da868a540a61d03394674531b280a21b04d2be91c3f1d7d60916"
+
+[components.service-b]
+repo = "henosis-playground/service-b"
+ref = "b8c08c0931d31566337e606261c59c8b81541313"
+digest = "sha256:8cd524b7c77af47db742cd1c9db91b685ccfc43daee46b26cca17a3adf33de18"
