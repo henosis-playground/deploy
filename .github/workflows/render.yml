@@ -71,8 +71,8 @@ jobs:
         run: |
           for lockfile in ${{ needs.detect-changes.outputs.lockfiles }}; do
             echo "Rendering ${lockfile}"
-            node _platform/packages/renderer/dist/render.js "${lockfile}" \
-              --output-dir "rendered/${lockfile%.toml}"
+            pnpm --dir _platform --filter @henosis/renderer exec tsx src/render.ts "${GITHUB_WORKSPACE}/${lockfile}" \
+              --output-dir "${GITHUB_WORKSPACE}/rendered/${lockfile%.toml}"
           done
 
       - name: Push rendered output to env branches
