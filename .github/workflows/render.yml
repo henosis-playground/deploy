@@ -23,11 +23,18 @@ jobs:
         shell: bash
         run: |
           if git rev-parse HEAD~1 >/dev/null 2>&1; then
-            files=$(git diff --name-only HEAD~1 HEAD -- '*.toml' | tr '\n' ' ')
+            files=$(git diff --name-only HEAD~1 HEAD -- '*.toml')
           else
-            files=$(git ls-files '*.toml' | tr '\n' ' ')
+            files=$(git ls-files '*.toml')
           fi
-          echo "lockfiles=${files}" >> "$GITHUB_OUTPUT"
+
+          if printf '%s\n' "${files}" | grep -Fxq 'dev.toml'; then
+            followers=$(grep -lE 'follow[[:space:]]*=[[:space:]]*"dev"' -- *.toml 2>/dev/null || true)
+            files=$(printf '%s\n%s\n' "${files}" "${followers}" | awk 'NF && !seen[$0]++')
+          fi
+
+          lockfiles=$(printf '%s\n' "${files}" | tr '\n' ' ')
+          echo "lockfiles=${lockfiles}" >> "$GITHUB_OUTPUT"
 
   render:
     needs: detect-changes
