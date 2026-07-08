@@ -1,0 +1,12 @@
+[environment]
+id = "pr-service-a-3"
+
+[components.service-a]
+repo = "henosis-playground/service-a"
+ref = "poc/20260708-c3-api-rename"
+digest = "sha256:e023c3b60ee9b32f17de02ba27dccad76dec3fce86dd5bfad0f0667cf5fdd7d2"
+
+[components.service-b]
+repo = "henosis-playground/service-b"
+ref = "0b0aa97bd9aaf512634099fe21685491ae916521"
+digest = "sha256:fa36cca09c46c3e446ac90e64815a24ab24ba8bed98715a6e9dec55ee5268ba0"
