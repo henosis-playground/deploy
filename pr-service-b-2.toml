@@ -1,0 +1,10 @@
+[environment]
+id = "pr-service-b-2"
+
+[components.service-a]
+follow = "dev"
+
+[components.service-b]
+repo = "henosis-playground/service-b"
+ref = "poc/20260708-c2-service-b-benign"
+digest = "sha256:d7a7e6888044c01369d2f851bc03fd7a4fed9c6269168d6a1aa736e824e2ffbf"
