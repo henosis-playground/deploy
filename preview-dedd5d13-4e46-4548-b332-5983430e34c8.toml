@@ -1,0 +1,12 @@
+[environment]
+id = "preview-dedd5d13-4e46-4548-b332-5983430e34c8"
+
+[components.service-a]
+repo = "henosis-playground/service-a"
+ref = "live/verify-identity-20260708"
+digest = "sha256:658ad5825e147a927fcc3a5b43d8cc3914382f6d5cefc0b37f262d1d4d367eb3"
+
+[components.service-b]
+repo = "henosis-playground/service-b"
+ref = "1b5b79f0caab522394ff54012ef946c417e76cf0"
+digest = "sha256:d567c5b7c54ca11941c105b42f1dd7ff2f17cfe593e0e9d9582e951bb9081b9d"
