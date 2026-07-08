@@ -4,7 +4,7 @@ id = "pr-service-a-3"
 [components.service-a]
 repo = "henosis-playground/service-a"
 ref = "poc/20260708-c3-api-rename"
-digest = "sha256:e023c3b60ee9b32f17de02ba27dccad76dec3fce86dd5bfad0f0667cf5fdd7d2"
+digest = "sha256:1b19e12c4c37a528c195b458449a692624e7f1f1dcf37598d44cc2621064148b"
 
 [components.service-b]
 repo = "henosis-playground/service-b"
