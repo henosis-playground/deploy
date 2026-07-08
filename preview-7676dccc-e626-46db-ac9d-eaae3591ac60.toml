@@ -4,7 +4,7 @@ id = "preview-7676dccc-e626-46db-ac9d-eaae3591ac60"
 [components.service-a]
 repo = "henosis-playground/service-a"
 ref = "demo-1"
-digest = "sha256:10725ee0ce34b11d79f4466b6a30f26d370c8a1014e0c4ee2da6d50127c7fb16"
+digest = "sha256:b505621c75045c200f04b74c31525425c8d958dd18d877edb13d67792d585682"
 
 [components.service-b]
 repo = "henosis-playground/service-b"
