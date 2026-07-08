@@ -1,0 +1,10 @@
+[environment]
+id = "preview-63189e06-2824-45af-9e5f-54950c71b3c6"
+
+[components.service-a]
+follow = "dev"
+
+[components.service-b]
+repo = "henosis-playground/service-b"
+ref = "live/verify-render-fixed-20260708"
+digest = "sha256:da8a9b1283b9118e571b06cf87e28f3bdad8c93f2794e6f95c0e658e96d22dbc"
