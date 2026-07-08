@@ -1,0 +1,10 @@
+[environment]
+id = "preview-f14f9b03-79cf-4acd-aaeb-1c5adbf28da6"
+
+[components.service-a]
+follow = "dev"
+
+[components.service-b]
+repo = "henosis-playground/service-b"
+ref = "live/verify-gateonly-20260708"
+digest = "sha256:c7e6f9d84af129e2e6741d9e64ad58df3cf5b4a781f785e00f48de972ae74b7e"
