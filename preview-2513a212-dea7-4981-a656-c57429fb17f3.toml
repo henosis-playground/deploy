@@ -1,0 +1,12 @@
+[environment]
+id = "preview-2513a212-dea7-4981-a656-c57429fb17f3"
+
+[components.service-a]
+repo = "henosis-playground/service-a"
+ref = "live-d15-d18-a-20260708123455"
+digest = "sha256:94732271833a8ca6f47481ff7e0cb7888ea177f38ee1547e8f716f5960be2cd1"
+
+[components.service-b]
+repo = "henosis-playground/service-b"
+ref = "1b5b79f0caab522394ff54012ef946c417e76cf0"
+digest = "sha256:d567c5b7c54ca11941c105b42f1dd7ff2f17cfe593e0e9d9582e951bb9081b9d"
