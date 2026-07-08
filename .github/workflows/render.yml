@@ -88,14 +88,28 @@ jobs:
         run: |
           git config user.email "henosis-render@github-actions"
           git config user.name "Henosis Renderer"
+          git fetch origin "+refs/heads/${GITHUB_REF_NAME}:refs/remotes/origin/${GITHUB_REF_NAME}" --depth=1
+          latest_main="refs/remotes/origin/${GITHUB_REF_NAME}"
 
           for manifest in ${{ needs.detect-changes.outputs.manifests }}; do
             env_id="${manifest%.toml}"
             branch="env/${env_id}"
             worktree="/tmp/henosis-env-${env_id}"
 
+            if ! git cat-file -e "${latest_main}:${manifest}" 2>/dev/null; then
+              echo "Skipping ${manifest}; it no longer exists on origin/${GITHUB_REF_NAME}"
+              continue
+            fi
+
+            rendered_blob="$(git rev-parse "${GITHUB_SHA}:${manifest}")"
+            latest_blob="$(git rev-parse "${latest_main}:${manifest}")"
+            if [ "${rendered_blob}" != "${latest_blob}" ]; then
+              echo "Skipping ${manifest}; a newer manifest revision exists on origin/${GITHUB_REF_NAME}"
+              continue
+            fi
+
             rm -rf "${worktree}"
-            git fetch origin "${branch}" || true
+            git fetch origin "+refs/heads/${branch}:refs/remotes/origin/${branch}" || true
             if git rev-parse --verify "origin/${branch}" >/dev/null 2>&1; then
               git worktree add "${worktree}" -B "${branch}" "origin/${branch}"
             else
