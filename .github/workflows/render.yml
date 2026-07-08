@@ -13,7 +13,7 @@ jobs:
   detect-changes:
     runs-on: ubuntu-latest
     outputs:
-      lockfiles: ${{ steps.changed.outputs.lockfiles }}
+      manifests: ${{ steps.changed.outputs.manifests }}
     steps:
       - uses: actions/checkout@v4
         with:
@@ -39,13 +39,13 @@ jobs:
             files=$(printf '%s\n%s\n' "${files}" "${followers}" | awk 'NF && !seen[$0]++')
           fi
 
-          lockfiles=$(printf '%s\n' "${files}" | tr '\n' ' ')
-          echo "lockfiles=${lockfiles}" >> "$GITHUB_OUTPUT"
+          manifests=$(printf '%s\n' "${files}" | tr '\n' ' ')
+          echo "manifests=${manifests}" >> "$GITHUB_OUTPUT"
 
   render:
     needs: detect-changes
     runs-on: ubuntu-latest
-    if: needs.detect-changes.outputs.lockfiles != ''
+    if: needs.detect-changes.outputs.manifests != ''
     steps:
       - uses: actions/checkout@v4
 
@@ -70,16 +70,17 @@ jobs:
         working-directory: _platform
         run: |
           pnpm install
-          pnpm --filter @henosis/sdk build
+          pnpm --filter @henosis/core build
+          pnpm --filter @henosis/platform-mock build
           pnpm --filter @henosis/renderer build
 
-      - name: Render changed lockfiles
+      - name: Render changed manifests
         shell: bash
         run: |
-          for lockfile in ${{ needs.detect-changes.outputs.lockfiles }}; do
-            echo "Rendering ${lockfile}"
-            pnpm --dir _platform --filter @henosis/renderer exec tsx src/render.ts "${GITHUB_WORKSPACE}/${lockfile}" \
-              --output-dir "${GITHUB_WORKSPACE}/rendered/${lockfile%.toml}"
+          for manifest in ${{ needs.detect-changes.outputs.manifests }}; do
+            echo "Rendering ${manifest}"
+            pnpm --dir _platform --filter @henosis/renderer exec tsx src/render.ts "${GITHUB_WORKSPACE}/${manifest}" \
+              --output-dir "${GITHUB_WORKSPACE}/rendered/${manifest%.toml}"
           done
 
       - name: Push rendered output to env branches
@@ -88,8 +89,8 @@ jobs:
           git config user.email "henosis-render@github-actions"
           git config user.name "Henosis Renderer"
 
-          for lockfile in ${{ needs.detect-changes.outputs.lockfiles }}; do
-            env_id="${lockfile%.toml}"
+          for manifest in ${{ needs.detect-changes.outputs.manifests }}; do
+            env_id="${manifest%.toml}"
             branch="env/${env_id}"
             worktree="/tmp/henosis-env-${env_id}"
 

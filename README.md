@@ -1,6 +1,6 @@
 # Henosis deploy
 
-Environment lockfiles live on `main`, one TOML file per environment.
+Environment manifests live on `main`, one TOML file per environment.
 
 Rendered output lives in environment branches written by the renderer.
 
