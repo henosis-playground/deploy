@@ -1,0 +1,12 @@
+[environment]
+id = "preview-b758d249-de1e-4808-883b-ae2c1e99a3f5"
+
+[components.service-a]
+repo = "henosis-playground/service-a"
+ref = "d20-contract-break-diagnostics"
+digest = "sha256:e147cf7e88b3d28340dabd9f5ae0fa9b8c8887709e682e538fe6f27eaa1965aa"
+
+[components.service-b]
+repo = "henosis-playground/service-b"
+ref = "c006b3b315507d0022e6d8de993cd1faabd5a665"
+digest = "sha256:84df1920f901cc74217f24998c133004e9b8de97b01f906201e0afe596a89c64"
