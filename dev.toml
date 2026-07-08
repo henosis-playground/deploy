@@ -3,10 +3,10 @@ id = "dev"
 
 [components.service-a]
 repo = "henosis-playground/service-a"
-ref = "d759a844bc783e65f5f039312df9e03d62b5a0ac"
-digest = "sha256:e85faa78ee0265984bf3aa1e116f177b5fafebd59d373bcef5a9d5bbb5fa225e"
+ref = "54c26b2f10b88f77dd78b4f4b092c0cd48cec2d2"
+digest = "sha256:9637d5f67388a7aa39550c97efa724b488f5b4e111acd38136ebee2b0ca0ddbe"
 
 [components.service-b]
 repo = "henosis-playground/service-b"
-ref = "b6ab63fdcb9815a992ef9363004c975380567628"
-digest = "sha256:37262d3289bc6fcd016592462684dc6bc2a710709fe01321ab5719c48c480c41"
+ref = "0b0aa97bd9aaf512634099fe21685491ae916521"
+digest = "sha256:fa36cca09c46c3e446ac90e64815a24ab24ba8bed98715a6e9dec55ee5268ba0"
