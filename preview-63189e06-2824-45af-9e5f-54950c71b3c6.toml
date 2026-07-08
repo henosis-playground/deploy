@@ -7,4 +7,4 @@ follow = "dev"
 [components.service-b]
 repo = "henosis-playground/service-b"
 ref = "live/verify-render-fixed-20260708"
-digest = "sha256:da8a9b1283b9118e571b06cf87e28f3bdad8c93f2794e6f95c0e658e96d22dbc"
+digest = "sha256:8b576f9dfd674792d60e1a8f87633959f975e10ac4112d2201eee3032e3e1e6b"
