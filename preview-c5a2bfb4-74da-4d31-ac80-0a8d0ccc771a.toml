@@ -7,4 +7,4 @@ follow = "dev"
 [components.service-b]
 repo = "henosis-playground/service-b"
 ref = "live-d15-d18-b-20260708123543"
-digest = "sha256:1fc7485db64356ce5fe4ee47403749a57c0e04ee8d4ce7ecad785001325b0978"
+digest = "sha256:51127c9f5496e10ee458ea358534de46dbc94bdcc71610eea714f2c2816e3461"
