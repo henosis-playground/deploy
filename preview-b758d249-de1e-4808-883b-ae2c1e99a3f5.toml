@@ -4,7 +4,7 @@ id = "preview-b758d249-de1e-4808-883b-ae2c1e99a3f5"
 [components.service-a]
 repo = "henosis-playground/service-a"
 ref = "d20-contract-break-diagnostics"
-digest = "sha256:9f3818e16b4759c37717e68720410dc89cf492dde986b5934429419706621099"
+digest = "sha256:33c1089f84bbe8bae5c2ac901621d1cac17a9c2f8a3e2dbc036a918782cfe694"
 
 [components.service-b]
 repo = "henosis-playground/service-b"
