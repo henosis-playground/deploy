@@ -1,0 +1,12 @@
+[environment]
+id = "pr-service-a-4"
+
+[components.service-a]
+repo = "henosis-playground/service-a"
+ref = "poc/20260708-c5-service-a-benign"
+digest = "sha256:340bc2309f6f8440c64216a9dffff4096fb251dfe164fbf8e6d30ab63afcaabb"
+
+[components.service-b]
+repo = "henosis-playground/service-b"
+ref = "0b0aa97bd9aaf512634099fe21685491ae916521"
+digest = "sha256:fa36cca09c46c3e446ac90e64815a24ab24ba8bed98715a6e9dec55ee5268ba0"
