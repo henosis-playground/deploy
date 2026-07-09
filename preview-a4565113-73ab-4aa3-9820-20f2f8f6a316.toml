@@ -1,0 +1,10 @@
+[environment]
+id = "preview-a4565113-73ab-4aa3-9820-20f2f8f6a316"
+
+[components.service-a]
+follow = "dev"
+
+[components.service-b]
+repo = "henosis-playground/service-b"
+ref = "codex-lifecycle-c-20260709"
+digest = "sha256:3edb31fc31eef357ef722cd6032f796842f452ac1c184ae86bc805a66a320583"
