@@ -1,0 +1,12 @@
+[environment]
+id = "preview-demo-shared"
+
+[components.service-a]
+repo = "henosis-playground/service-a"
+ref = "d21-live-service-a-20260709101615"
+digest = "sha256:9fced5fe13cb3a36f5a471c3ccef645f8b720e8163e64de2de71a7c962ab7173"
+
+[components.service-b]
+repo = "henosis-playground/service-b"
+ref = "c006b3b315507d0022e6d8de993cd1faabd5a665"
+digest = "sha256:84df1920f901cc74217f24998c133004e9b8de97b01f906201e0afe596a89c64"
