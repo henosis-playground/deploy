@@ -8,5 +8,5 @@ digest = "sha256:75e0b2f0d837b628399cc2ed42e9c54c49c2c3eb875ee773638854530c0af95
 
 [components.service-b]
 repo = "henosis-playground/service-b"
-ref = "c006b3b315507d0022e6d8de993cd1faabd5a665"
-digest = "sha256:84df1920f901cc74217f24998c133004e9b8de97b01f906201e0afe596a89c64"
+ref = "codex-lifecycle-b-b-20260709"
+digest = "sha256:4550a53e93e2e3adac95f06a5acdcdd29740621d495024be6717e663f7c84df2"
