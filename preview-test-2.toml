@@ -4,7 +4,7 @@ id = "preview-test-2"
 [components.service-a]
 repo = "henosis-playground/service-a"
 ref = "MikeIvanichev-patch-2"
-digest = "sha256:dac35d4ff28562f442eeeac9cfc4779fbfff164ec4a2653539043b2e0a0a3982"
+digest = "sha256:578ec8f54ee36aa434c00cceec9dfb5f354d197e4561e58cd2d3df0410cac543"
 
 [components.service-b]
 repo = "henosis-playground/service-b"
