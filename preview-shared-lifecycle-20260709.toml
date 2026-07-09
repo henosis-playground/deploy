@@ -1,0 +1,12 @@
+[environment]
+id = "preview-shared-lifecycle-20260709"
+
+[components.service-a]
+repo = "henosis-playground/service-a"
+ref = "codex-lifecycle-b-a-20260709"
+digest = "sha256:75e0b2f0d837b628399cc2ed42e9c54c49c2c3eb875ee773638854530c0af955"
+
+[components.service-b]
+repo = "henosis-playground/service-b"
+ref = "c006b3b315507d0022e6d8de993cd1faabd5a665"
+digest = "sha256:84df1920f901cc74217f24998c133004e9b8de97b01f906201e0afe596a89c64"
