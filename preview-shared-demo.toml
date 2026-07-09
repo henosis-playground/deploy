@@ -1,0 +1,10 @@
+[environment]
+id = "preview-shared-demo"
+
+[components.service-a]
+follow = "dev"
+
+[components.service-b]
+repo = "henosis-playground/service-b"
+ref = "live/d21-shared-demo"
+digest = "sha256:da9d6c054e55e62ae3125b7a06c3672d814a8cb8a70d49e83beb08cf943fd0ea"
