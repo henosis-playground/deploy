@@ -1,0 +1,12 @@
+[environment]
+id = "preview-test-2"
+
+[components.service-a]
+repo = "henosis-playground/service-a"
+ref = "MikeIvanichev-patch-2"
+digest = "sha256:dac35d4ff28562f442eeeac9cfc4779fbfff164ec4a2653539043b2e0a0a3982"
+
+[components.service-b]
+repo = "henosis-playground/service-b"
+ref = "b40f67c6ae0b1558ab0917fc7c89c293a755be9f"
+digest = "sha256:582ab66aaa204c66f029b6ea7d0989b0b122d6b810261b65acf1b2a8cbb39418"
