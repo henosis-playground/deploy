@@ -2,9 +2,7 @@
 id = "preview-shared-lifecycle-20260709"
 
 [components.service-a]
-repo = "henosis-playground/service-a"
-ref = "codex-lifecycle-b-a-20260709"
-digest = "sha256:75e0b2f0d837b628399cc2ed42e9c54c49c2c3eb875ee773638854530c0af955"
+follow = "dev"
 
 [components.service-b]
 repo = "henosis-playground/service-b"
