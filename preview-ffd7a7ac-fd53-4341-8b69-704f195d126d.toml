@@ -4,7 +4,7 @@ id = "preview-ffd7a7ac-fd53-4341-8b69-704f195d126d"
 [components.service-a]
 repo = "henosis-playground/service-a"
 ref = "live/d21-on-demand-preview"
-digest = "sha256:25115abc3d5bd70f7cf9476dea33a522ca67d518b5c1629a4e3452af16b6c05f"
+digest = "sha256:5e5c876f2f85cfbd7d9c095ffbf8b64a143cb6b12352164c646e41488a7f8c34"
 
 [components.service-b]
 repo = "henosis-playground/service-b"
