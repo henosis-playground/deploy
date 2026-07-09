@@ -1,0 +1,10 @@
+[environment]
+id = "preview-d431ea69-f978-46aa-8de8-26b7069da7ce"
+
+[components.service-a]
+follow = "dev"
+
+[components.service-b]
+repo = "henosis-playground/service-b"
+ref = "MikeIvanichev-patch-2"
+digest = "sha256:2040b2de763dbc09c279542d9dc04687e458ff25955cbe113fe9f4078b906e3a"
