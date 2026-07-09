@@ -4,7 +4,7 @@ id = "preview-demo-shared"
 [components.service-a]
 repo = "henosis-playground/service-a"
 ref = "d21-live-service-a-20260709101615"
-digest = "sha256:9fced5fe13cb3a36f5a471c3ccef645f8b720e8163e64de2de71a7c962ab7173"
+digest = "sha256:7a6017ba3d5a01de3efa50c61be4a58fad977886cf4116415ce560f8139e234a"
 
 [components.service-b]
 repo = "henosis-playground/service-b"
