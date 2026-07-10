@@ -2,7 +2,9 @@
 id = "preview-74c63089-322c-4f20-a931-d8581b6f23bc"
 
 [components.service-a]
-follow = "dev"
+repo = "henosis-playground/service-a"
+ref = "e2e-e-borrow-a-20260710"
+digest = "sha256:bd3bd3de6d609b6c116aaa3c2aa9af88103902369e502bc0847a3aba4b4af642"
 
 [components.service-b]
 repo = "henosis-playground/service-b"
