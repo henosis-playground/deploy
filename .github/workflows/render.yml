@@ -22,22 +22,34 @@ jobs:
       - id: changed
         shell: bash
         run: |
+          git fetch origin '+refs/heads/env/*:refs/remotes/origin/env/*' --depth=1 || true
+
           if git rev-parse HEAD~1 >/dev/null 2>&1; then
-            files=$(git diff --name-only --diff-filter=ACMRT HEAD~1 HEAD -- '*.toml')
+            changed_manifests=$(git diff --name-only --diff-filter=ACMRT HEAD~1 HEAD -- '*.toml')
           else
-            files=$(git ls-files '*.toml')
+            changed_manifests=$(git ls-files '*.toml')
           fi
 
-          files=$(printf '%s\n' "${files}" | while IFS= read -r file; do
+          changed_targets=$(printf '%s\n' "${changed_manifests}" | sed -n 's/\.toml$//p')
+          files=$(printf '%s\n' "${changed_manifests}" | while IFS= read -r file; do
             if [ -f "${file}" ] && grep -Eq '^\[environment\]' "${file}"; then
               printf '%s\n' "${file}"
             fi
           done)
 
-          if printf '%s\n' "${files}" | grep -Fxq 'dev.toml'; then
-            followers=$(grep -lE 'follow[[:space:]]*=[[:space:]]*"dev"' -- *.toml 2>/dev/null || true)
-            files=$(printf '%s\n%s\n' "${files}" "${followers}" | awk 'NF && !seen[$0]++')
-          fi
+          subscribers=$(git ls-files '*.toml' | while IFS= read -r manifest; do
+            if [ ! -f "${manifest}" ] || ! grep -Eq '^\[environment\]' "${manifest}"; then
+              continue
+            fi
+            env_id="${manifest%.toml}"
+            subscriptions=$(git show "refs/remotes/origin/env/${env_id}:manifest.json" 2>/dev/null \
+              | jq -r '.subscriptions[]?' 2>/dev/null || true)
+            if [ -n "${changed_targets}" ] && \
+              printf '%s\n' "${subscriptions}" | grep -Fxf <(printf '%s\n' "${changed_targets}") >/dev/null; then
+              printf '%s\n' "${manifest}"
+            fi
+          done)
+          files=$(printf '%s\n%s\n' "${files}" "${subscribers}" | awk 'NF && !seen[$0]++')
 
           manifests=$(printf '%s\n' "${files}" | tr '\n' ' ')
           echo "manifests=${manifests}" >> "$GITHUB_OUTPUT"
