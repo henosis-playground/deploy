@@ -68,30 +68,25 @@ jobs:
           path: _platform
           token: ${{ secrets.GITHUB_TOKEN }}
 
-      - uses: pnpm/action-setup@v4
-        with:
-          version: 11
-
       - uses: actions/setup-node@v4
         with:
-          node-version: "22"
-          cache: pnpm
-          cache-dependency-path: _platform/pnpm-lock.yaml
+          node-version: "22.23.1"
 
-      - name: Install and build platform
-        working-directory: _platform
+      - name: Prepare platform runner
+        id: runner
+        shell: bash
         run: |
-          pnpm install
-          pnpm --filter @henosis/core build
-          pnpm --filter @henosis/platform-mock build
-          pnpm --filter @henosis/renderer build
+          entrypoint="$(_platform/scripts/prepare-runner.sh origin/main)"
+          echo "entrypoint=${entrypoint}" >> "$GITHUB_OUTPUT"
 
       - name: Render changed manifests
         shell: bash
+        env:
+          HENOSIS_RUNNER_ENTRYPOINT: ${{ steps.runner.outputs.entrypoint }}
         run: |
           for manifest in ${{ needs.detect-changes.outputs.manifests }}; do
             echo "Rendering ${manifest}"
-            pnpm --dir _platform --filter @henosis/renderer exec tsx src/render.ts "${GITHUB_WORKSPACE}/${manifest}" \
+            "$HENOSIS_RUNNER_ENTRYPOINT" render "${GITHUB_WORKSPACE}/${manifest}" \
               --output-dir "${GITHUB_WORKSPACE}/rendered/${manifest%.toml}"
           done
 
