@@ -1,0 +1,304 @@
+{
+  "environment": "preview_5prgate0000000000000000000",
+  "subscriptions": [],
+  "components": {
+    "service-a": {
+      "ref": "ca73c9ae5b6579ad0b6b77b80fb77b54fc5fd595",
+      "digest": "sha256:b808fd4ef39b8f18309b6e266f7ab84d466ee8713c20f832248ae35cc5b64586",
+      "source": {
+        "kind": "pinned"
+      },
+      "effectiveEnvironment": "preview_5prgate0000000000000000000",
+      "disposition": {
+        "kind": "materialized"
+      },
+      "outputs": {
+        "api": "https://api.service-a-preview-5prgate0000000000000000000.svc.cluster.local/api/v3/healthz",
+        "port": 443,
+        "test": "hi"
+      },
+      "records": [
+        {
+          "kind": "io.kubernetes.object",
+          "data": {
+            "apiVersion": "v1",
+            "kind": "Namespace",
+            "metadata": {
+              "name": "service-a-preview-5prgate0000000000000000000",
+              "labels": {
+                "henosis.dev/environment": "preview_5prgate0000000000000000000"
+              }
+            }
+          }
+        },
+        {
+          "kind": "io.kubernetes.object",
+          "data": {
+            "apiVersion": "apps/v1",
+            "kind": "Deployment",
+            "metadata": {
+              "name": "api",
+              "namespace": "service-a-preview-5prgate0000000000000000000",
+              "labels": {
+                "app.kubernetes.io/name": "api",
+                "henosis.dev/environment": "preview_5prgate0000000000000000000"
+              }
+            },
+            "spec": {
+              "replicas": 1,
+              "selector": {
+                "matchLabels": {
+                  "app.kubernetes.io/name": "api",
+                  "henosis.dev/environment": "preview_5prgate0000000000000000000"
+                }
+              },
+              "template": {
+                "metadata": {
+                  "labels": {
+                    "app.kubernetes.io/name": "api",
+                    "henosis.dev/environment": "preview_5prgate0000000000000000000"
+                  }
+                },
+                "spec": {
+                  "containers": [
+                    {
+                      "name": "api",
+                      "image": "henosis-poc.invalid/service-a@sha256:b808fd4ef39b8f18309b6e266f7ab84d466ee8713c20f832248ae35cc5b64586",
+                      "ports": [
+                        {
+                          "name": "http",
+                          "containerPort": 3000
+                        }
+                      ],
+                      "resources": {
+                        "requests": {
+                          "cpu": "100m",
+                          "memory": "128Mi"
+                        },
+                        "limits": {
+                          "cpu": "500m",
+                          "memory": "512Mi"
+                        }
+                      }
+                    }
+                  ]
+                }
+              }
+            }
+          }
+        },
+        {
+          "kind": "io.kubernetes.object",
+          "data": {
+            "apiVersion": "v1",
+            "kind": "Service",
+            "metadata": {
+              "name": "api",
+              "namespace": "service-a-preview-5prgate0000000000000000000",
+              "labels": {
+                "app.kubernetes.io/name": "api",
+                "henosis.dev/environment": "preview_5prgate0000000000000000000"
+              }
+            },
+            "spec": {
+              "type": "ClusterIP",
+              "selector": {
+                "app.kubernetes.io/name": "api",
+                "henosis.dev/environment": "preview_5prgate0000000000000000000"
+              },
+              "ports": [
+                {
+                  "name": "http",
+                  "protocol": "TCP",
+                  "port": 443,
+                  "targetPort": 3000
+                }
+              ]
+            }
+          }
+        },
+        {
+          "kind": "io.kubernetes.object",
+          "data": {
+            "apiVersion": "policy/v1",
+            "kind": "PodDisruptionBudget",
+            "metadata": {
+              "name": "api",
+              "namespace": "service-a-preview-5prgate0000000000000000000",
+              "labels": {
+                "app.kubernetes.io/name": "api",
+                "henosis.dev/environment": "preview_5prgate0000000000000000000"
+              }
+            },
+            "spec": {
+              "minAvailable": 1,
+              "selector": {
+                "matchLabels": {
+                  "app.kubernetes.io/name": "api",
+                  "henosis.dev/environment": "preview_5prgate0000000000000000000"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "artifactPaths": [
+        "k8s.yaml"
+      ]
+    },
+    "service-b": {
+      "ref": "4ab590bd33410df836baa7fe3a08d3999b2d2a8a",
+      "digest": "sha256:f0744d67c15d0c74d6c79444a394455b458a59c4b25ea4e037ad4cdf22f377d1",
+      "source": {
+        "kind": "pinned"
+      },
+      "effectiveEnvironment": "preview_5prgate0000000000000000000",
+      "disposition": {
+        "kind": "materialized"
+      },
+      "outputs": {
+        "app": "http://app.service-b-preview-5prgate0000000000000000000.svc.cluster.local/app/metrics",
+        "upstream": "https://api.service-a-preview-5prgate0000000000000000000.svc.cluster.local/api/v3/healthz",
+        "upstreamPort": 443
+      },
+      "records": [
+        {
+          "kind": "io.kubernetes.object",
+          "data": {
+            "apiVersion": "v1",
+            "kind": "Namespace",
+            "metadata": {
+              "name": "service-b-preview-5prgate0000000000000000000",
+              "labels": {
+                "henosis.dev/environment": "preview_5prgate0000000000000000000"
+              }
+            }
+          }
+        },
+        {
+          "kind": "io.kubernetes.object",
+          "data": {
+            "apiVersion": "apps/v1",
+            "kind": "Deployment",
+            "metadata": {
+              "name": "app",
+              "namespace": "service-b-preview-5prgate0000000000000000000",
+              "labels": {
+                "app.kubernetes.io/name": "app",
+                "henosis.dev/environment": "preview_5prgate0000000000000000000"
+              }
+            },
+            "spec": {
+              "replicas": 1,
+              "selector": {
+                "matchLabels": {
+                  "app.kubernetes.io/name": "app",
+                  "henosis.dev/environment": "preview_5prgate0000000000000000000"
+                }
+              },
+              "template": {
+                "metadata": {
+                  "labels": {
+                    "app.kubernetes.io/name": "app",
+                    "henosis.dev/environment": "preview_5prgate0000000000000000000"
+                  }
+                },
+                "spec": {
+                  "containers": [
+                    {
+                      "name": "app",
+                      "image": "henosis-poc.invalid/service-b@sha256:f0744d67c15d0c74d6c79444a394455b458a59c4b25ea4e037ad4cdf22f377d1",
+                      "ports": [
+                        {
+                          "name": "http",
+                          "containerPort": 3000
+                        }
+                      ],
+                      "resources": {
+                        "requests": {
+                          "cpu": "50m",
+                          "memory": "64Mi"
+                        },
+                        "limits": {
+                          "cpu": "250m",
+                          "memory": "256Mi"
+                        }
+                      },
+                      "env": [
+                        {
+                          "name": "UPSTREAM_PORT",
+                          "value": 443
+                        },
+                        {
+                          "name": "UPSTREAM_URL",
+                          "value": "https://api.service-a-preview-5prgate0000000000000000000.svc.cluster.local/api/v3/healthz"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              }
+            }
+          }
+        },
+        {
+          "kind": "io.kubernetes.object",
+          "data": {
+            "apiVersion": "v1",
+            "kind": "Service",
+            "metadata": {
+              "name": "app",
+              "namespace": "service-b-preview-5prgate0000000000000000000",
+              "labels": {
+                "app.kubernetes.io/name": "app",
+                "henosis.dev/environment": "preview_5prgate0000000000000000000"
+              }
+            },
+            "spec": {
+              "type": "ClusterIP",
+              "selector": {
+                "app.kubernetes.io/name": "app",
+                "henosis.dev/environment": "preview_5prgate0000000000000000000"
+              },
+              "ports": [
+                {
+                  "name": "http",
+                  "protocol": "TCP",
+                  "port": 80,
+                  "targetPort": 3000
+                }
+              ]
+            }
+          }
+        },
+        {
+          "kind": "io.kubernetes.object",
+          "data": {
+            "apiVersion": "policy/v1",
+            "kind": "PodDisruptionBudget",
+            "metadata": {
+              "name": "app",
+              "namespace": "service-b-preview-5prgate0000000000000000000",
+              "labels": {
+                "app.kubernetes.io/name": "app",
+                "henosis.dev/environment": "preview_5prgate0000000000000000000"
+              }
+            },
+            "spec": {
+              "minAvailable": 1,
+              "selector": {
+                "matchLabels": {
+                  "app.kubernetes.io/name": "app",
+                  "henosis.dev/environment": "preview_5prgate0000000000000000000"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "artifactPaths": [
+        "k8s.yaml"
+      ]
+    }
+  }
+}
