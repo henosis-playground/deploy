@@ -1,0 +1,12 @@
+[environment]
+id = "preview-e2fe94eb-f73d-4856-bc98-f1e5d0634395"
+
+[components.service-a]
+repo = "henosis-playground/service-a"
+ref = "live-flip-legacy-20260712"
+digest = "sha256:b3fe34e3a0a83c5f8f55d11bf99eacca8bf65f90abdeeb40ee5611b885cdb997"
+
+[components.service-b]
+repo = "henosis-playground/service-b"
+ref = "4ab590bd33410df836baa7fe3a08d3999b2d2a8a"
+digest = "sha256:f0744d67c15d0c74d6c79444a394455b458a59c4b25ea4e037ad4cdf22f377d1"
