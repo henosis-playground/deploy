@@ -10,3 +10,18 @@ digest = "sha256:2fb9831dd8310d33f5e19a0597e426a389d8d82faf5b19a229727ebcdf28a47
 repo = "henosis-playground/service-f"
 ref = "7fe6e76604d1606922e30fbe06ee8649b2400084"
 digest = "sha256:0fcc9b29f7bd16d451de2e579a55fdc5fff3dfdb2fe788fe08e3fc1efeb2e273"
+
+[components.service-b]
+repo = "henosis-playground/service-b"
+ref = "6c0c34c1dc2372abe55ee7b844d769dd1a938f3b"
+digest = "sha256:8ccf941c63308627ea64876f8e2c483ed1f81e5f859584b23f76cc9cf4e84fe1"
+
+[components.service-d]
+repo = "henosis-playground/service-d"
+ref = "670483cda98e26dee6c0c5390bc697aa1b46d458"
+digest = "sha256:1243b0ccbf9061994157f12c6785d2b7351ce64c28ed9f7bfa7ad8d45c50ff31"
+
+[components.service-e]
+repo = "henosis-playground/service-e"
+ref = "9fa7e757ea27fb01fca03e33a4894bb55e628ca0"
+digest = "sha256:6146313bf9c080480613932051a595ac6a1657832c05ce607fbf78229d3babd9"
