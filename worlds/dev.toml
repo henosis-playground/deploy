@@ -1,0 +1,27 @@
+[environment]
+id = "dev"
+
+[components.service-a]
+repo = "henosis-playground/service-a"
+ref = "be99b252bf442309ece0865df86179f0e0dc9335"
+digest = "sha256:2fb9831dd8310d33f5e19a0597e426a389d8d82faf5b19a229727ebcdf28a479"
+
+[components.service-b]
+repo = "henosis-playground/service-b"
+ref = "4ab590bd33410df836baa7fe3a08d3999b2d2a8a"
+digest = "sha256:f0744d67c15d0c74d6c79444a394455b458a59c4b25ea4e037ad4cdf22f377d1"
+
+[components.service-d]
+repo = "henosis-playground/service-d"
+ref = "670483cda98e26dee6c0c5390bc697aa1b46d458"
+digest = "sha256:1243b0ccbf9061994157f12c6785d2b7351ce64c28ed9f7bfa7ad8d45c50ff31"
+
+[components.service-e]
+repo = "henosis-playground/service-e"
+ref = "5106d7301ba1187b298caf840710b3b693865027"
+digest = "sha256:392e51688a4b339cb32eb279c34784ffe6a03b072518897dec5c81f65ea610cc"
+
+[components.service-f]
+repo = "henosis-playground/service-f"
+ref = "be6ae118eca69821647029cf47f0186e33815fc7"
+digest = "sha256:d8cf223f659ea68dc4ea23e920588eb3363ea9ec6e7541b79f7cb1beb01bcf50"
