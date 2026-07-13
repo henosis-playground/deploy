@@ -1,0 +1,314 @@
+{
+  "components": {
+    "service-a": {
+      "artifactPaths": [
+        "k8s.yaml"
+      ],
+      "digest": "sha256:b808fd4ef39b8f18309b6e266f7ab84d466ee8713c20f832248ae35cc5b64586",
+      "disposition": {
+        "kind": "materialized"
+      },
+      "effectiveEnvironment": "preview_3jhc7x633z88188fzqhcbbrf84",
+      "outputs": {
+        "api": "https://api.service-a-preview-3jhc7x633z88188fzqhcbbrf84.svc.cluster.local/api/v3/healthz",
+        "port": 443,
+        "test": "hi"
+      },
+      "records": [
+        {
+          "data": {
+            "apiVersion": "v1",
+            "kind": "Namespace",
+            "metadata": {
+              "labels": {
+                "henosis.dev/environment": "preview_3jhc7x633z88188fzqhcbbrf84"
+              },
+              "name": "service-a-preview-3jhc7x633z88188fzqhcbbrf84"
+            }
+          },
+          "kind": "io.kubernetes.object"
+        },
+        {
+          "data": {
+            "apiVersion": "apps/v1",
+            "kind": "Deployment",
+            "metadata": {
+              "labels": {
+                "app.kubernetes.io/name": "api",
+                "henosis.dev/environment": "preview_3jhc7x633z88188fzqhcbbrf84"
+              },
+              "name": "api",
+              "namespace": "service-a-preview-3jhc7x633z88188fzqhcbbrf84"
+            },
+            "spec": {
+              "replicas": 1,
+              "selector": {
+                "matchLabels": {
+                  "app.kubernetes.io/name": "api",
+                  "henosis.dev/environment": "preview_3jhc7x633z88188fzqhcbbrf84"
+                }
+              },
+              "template": {
+                "metadata": {
+                  "labels": {
+                    "app.kubernetes.io/name": "api",
+                    "henosis.dev/environment": "preview_3jhc7x633z88188fzqhcbbrf84"
+                  }
+                },
+                "spec": {
+                  "containers": [
+                    {
+                      "image": "henosis-poc.invalid/service-a@sha256:b808fd4ef39b8f18309b6e266f7ab84d466ee8713c20f832248ae35cc5b64586",
+                      "name": "api",
+                      "ports": [
+                        {
+                          "containerPort": 3000,
+                          "name": "http"
+                        }
+                      ],
+                      "resources": {
+                        "limits": {
+                          "cpu": "500m",
+                          "memory": "512Mi"
+                        },
+                        "requests": {
+                          "cpu": "100m",
+                          "memory": "128Mi"
+                        }
+                      }
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          "kind": "io.kubernetes.object"
+        },
+        {
+          "data": {
+            "apiVersion": "v1",
+            "kind": "Service",
+            "metadata": {
+              "labels": {
+                "app.kubernetes.io/name": "api",
+                "henosis.dev/environment": "preview_3jhc7x633z88188fzqhcbbrf84"
+              },
+              "name": "api",
+              "namespace": "service-a-preview-3jhc7x633z88188fzqhcbbrf84"
+            },
+            "spec": {
+              "ports": [
+                {
+                  "name": "http",
+                  "port": 443,
+                  "protocol": "TCP",
+                  "targetPort": 3000
+                }
+              ],
+              "selector": {
+                "app.kubernetes.io/name": "api",
+                "henosis.dev/environment": "preview_3jhc7x633z88188fzqhcbbrf84"
+              },
+              "type": "ClusterIP"
+            }
+          },
+          "kind": "io.kubernetes.object"
+        },
+        {
+          "data": {
+            "apiVersion": "policy/v1",
+            "kind": "PodDisruptionBudget",
+            "metadata": {
+              "labels": {
+                "app.kubernetes.io/name": "api",
+                "henosis.dev/environment": "preview_3jhc7x633z88188fzqhcbbrf84"
+              },
+              "name": "api",
+              "namespace": "service-a-preview-3jhc7x633z88188fzqhcbbrf84"
+            },
+            "spec": {
+              "minAvailable": 1,
+              "selector": {
+                "matchLabels": {
+                  "app.kubernetes.io/name": "api",
+                  "henosis.dev/environment": "preview_3jhc7x633z88188fzqhcbbrf84"
+                }
+              }
+            }
+          },
+          "kind": "io.kubernetes.object"
+        }
+      ],
+      "ref": "ca73c9ae5b6579ad0b6b77b80fb77b54fc5fd595",
+      "source": {
+        "kind": "pinned"
+      }
+    },
+    "service-b": {
+      "artifactPaths": [
+        "k8s.yaml"
+      ],
+      "digest": "sha256:f0744d67c15d0c74d6c79444a394455b458a59c4b25ea4e037ad4cdf22f377d1",
+      "disposition": {
+        "kind": "materialized"
+      },
+      "effectiveEnvironment": "preview_3jhc7x633z88188fzqhcbbrf84",
+      "outputs": {
+        "app": "http://app.service-b-preview-3jhc7x633z88188fzqhcbbrf84.svc.cluster.local/app/metrics",
+        "upstream": "https://api.service-a-preview-3jhc7x633z88188fzqhcbbrf84.svc.cluster.local/api/v3/healthz",
+        "upstreamPort": 443
+      },
+      "records": [
+        {
+          "data": {
+            "apiVersion": "v1",
+            "kind": "Namespace",
+            "metadata": {
+              "labels": {
+                "henosis.dev/environment": "preview_3jhc7x633z88188fzqhcbbrf84"
+              },
+              "name": "service-b-preview-3jhc7x633z88188fzqhcbbrf84"
+            }
+          },
+          "kind": "io.kubernetes.object"
+        },
+        {
+          "data": {
+            "apiVersion": "apps/v1",
+            "kind": "Deployment",
+            "metadata": {
+              "labels": {
+                "app.kubernetes.io/name": "app",
+                "henosis.dev/environment": "preview_3jhc7x633z88188fzqhcbbrf84"
+              },
+              "name": "app",
+              "namespace": "service-b-preview-3jhc7x633z88188fzqhcbbrf84"
+            },
+            "spec": {
+              "replicas": 1,
+              "selector": {
+                "matchLabels": {
+                  "app.kubernetes.io/name": "app",
+                  "henosis.dev/environment": "preview_3jhc7x633z88188fzqhcbbrf84"
+                }
+              },
+              "template": {
+                "metadata": {
+                  "labels": {
+                    "app.kubernetes.io/name": "app",
+                    "henosis.dev/environment": "preview_3jhc7x633z88188fzqhcbbrf84"
+                  }
+                },
+                "spec": {
+                  "containers": [
+                    {
+                      "env": [
+                        {
+                          "name": "UPSTREAM_PORT",
+                          "value": 443
+                        },
+                        {
+                          "name": "UPSTREAM_URL",
+                          "value": "https://api.service-a-preview-3jhc7x633z88188fzqhcbbrf84.svc.cluster.local/api/v3/healthz"
+                        }
+                      ],
+                      "image": "henosis-poc.invalid/service-b@sha256:f0744d67c15d0c74d6c79444a394455b458a59c4b25ea4e037ad4cdf22f377d1",
+                      "name": "app",
+                      "ports": [
+                        {
+                          "containerPort": 3000,
+                          "name": "http"
+                        }
+                      ],
+                      "resources": {
+                        "limits": {
+                          "cpu": "250m",
+                          "memory": "256Mi"
+                        },
+                        "requests": {
+                          "cpu": "50m",
+                          "memory": "64Mi"
+                        }
+                      }
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          "kind": "io.kubernetes.object"
+        },
+        {
+          "data": {
+            "apiVersion": "v1",
+            "kind": "Service",
+            "metadata": {
+              "labels": {
+                "app.kubernetes.io/name": "app",
+                "henosis.dev/environment": "preview_3jhc7x633z88188fzqhcbbrf84"
+              },
+              "name": "app",
+              "namespace": "service-b-preview-3jhc7x633z88188fzqhcbbrf84"
+            },
+            "spec": {
+              "ports": [
+                {
+                  "name": "http",
+                  "port": 80,
+                  "protocol": "TCP",
+                  "targetPort": 3000
+                }
+              ],
+              "selector": {
+                "app.kubernetes.io/name": "app",
+                "henosis.dev/environment": "preview_3jhc7x633z88188fzqhcbbrf84"
+              },
+              "type": "ClusterIP"
+            }
+          },
+          "kind": "io.kubernetes.object"
+        },
+        {
+          "data": {
+            "apiVersion": "policy/v1",
+            "kind": "PodDisruptionBudget",
+            "metadata": {
+              "labels": {
+                "app.kubernetes.io/name": "app",
+                "henosis.dev/environment": "preview_3jhc7x633z88188fzqhcbbrf84"
+              },
+              "name": "app",
+              "namespace": "service-b-preview-3jhc7x633z88188fzqhcbbrf84"
+            },
+            "spec": {
+              "minAvailable": 1,
+              "selector": {
+                "matchLabels": {
+                  "app.kubernetes.io/name": "app",
+                  "henosis.dev/environment": "preview_3jhc7x633z88188fzqhcbbrf84"
+                }
+              }
+            }
+          },
+          "kind": "io.kubernetes.object"
+        }
+      ],
+      "ref": "4ab590bd33410df836baa7fe3a08d3999b2d2a8a",
+      "source": {
+        "kind": "pinned"
+      }
+    }
+  },
+  "environment": "preview_3jhc7x633z88188fzqhcbbrf84",
+  "henosis": {
+    "apiVersion": "henosis.dev/generation-receipt/v1",
+    "componentSpecHashes": [
+      "343a38e6d0333a5d31882c7252e0889487ba678bcf72db72ad46a9a6f6213112",
+      "ae16280504edf41101380a1126075539cf9633f761a8cda14b3651cacdba6689"
+    ],
+    "generation": "1",
+    "graphDigest": "sha256:9c77153e57e08598087e374230c8ef446c36dbaf5a31e726307d165bba8970e6",
+    "graphId": "aeaeaeaeaeaeaeaeaeaeaeaeaeaeaeae"
+  },
+  "subscriptions": []
+}
