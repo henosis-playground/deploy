@@ -16,3 +16,13 @@ repo = "henosis-playground/service-b"
 ref = "6c0c34c1dc2372abe55ee7b844d769dd1a938f3b"
 digest = "sha256:8ccf941c63308627ea64876f8e2c483ed1f81e5f859584b23f76cc9cf4e84fe1"
 
+[components.service-d]
+repo = "henosis-playground/service-d"
+ref = "a7b7fd315fe1aa267d1ff15b792b4d20b6af2a02"
+digest = "sha256:9992d0ee12f46ed96bdba8abe4b84bd51a60cc70ce01b2ff8b39a40164f20ae5"
+
+[components.service-e]
+repo = "henosis-playground/service-e"
+ref = "9fa7e757ea27fb01fca03e33a4894bb55e628ca0"
+digest = "sha256:6146313bf9c080480613932051a595ac6a1657832c05ce607fbf78229d3babd9"
+
