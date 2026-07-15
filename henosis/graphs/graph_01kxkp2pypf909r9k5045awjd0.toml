@@ -1,7 +1,7 @@
 schema = 1
 graph = "graph_01kxkp2pypf909r9k5045awjd0"
 name = "shared-af-cycle-1"
-generation = 2
+generation = 3
 
 [[components]]
 name = "service-a"
@@ -12,6 +12,7 @@ inputBindings = []
 kind = "vcs"
 repository = "henosis-playground/service-a"
 revision = "3a56e3dbbc88dfddcb9be45974afe0583687025e"
+ref = "refs/heads/demo/shared-preview-a"
 
 [[components]]
 name = "service-b"
@@ -45,7 +46,6 @@ valueJson = "InNoYTI1Njo2MjRhZDViNTYxYjJjMzU2MmNiNTIzNjRkNWFmMjkyNDAyZWM3MGM0MzI
 kind = "vcs"
 repository = "henosis-playground/service-e"
 revision = "8f557fd14d16148285a667971be883e9819c661d"
-ref = "refs/heads/demo/shared-preview-e"
 
 [[components]]
 name = "service-f"
