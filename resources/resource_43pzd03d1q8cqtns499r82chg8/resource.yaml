@@ -1,0 +1,18 @@
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: api
+  namespace: service-a
+  labels:
+    henosis.dev/graph-id: graph_01kxky8x1afj09wvmk35917yak
+    henosis.dev/resource-id: resource_43pzd03d1q8cqtns499r82chg8
+spec:
+  ports:
+  - name: http
+    port: 443
+    protocol: TCP
+    targetPort: 3000
+  selector:
+    app.kubernetes.io/name: api
+  type: ClusterIP
