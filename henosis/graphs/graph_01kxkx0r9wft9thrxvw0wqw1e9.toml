@@ -1,18 +1,17 @@
 schema = 1
 graph = "graph_01kxkx0r9wft9thrxvw0wqw1e9"
 name = "shared-af-cycle-2"
-generation = 2
+generation = 3
 
 [[components]]
 name = "service-a"
-bundleDigest = "t35vW7bL2W5CcPN8D1hSNkkYEQ9ZYxtA8+comkd4vUU="
+bundleDigest = "BAwdnPLVEJy/XG0PUg7bynKqRceOGeE/XCgQZd+yQyY="
 inputBindings = []
 
 [components.source]
 kind = "vcs"
 repository = "henosis-playground/service-a"
-revision = "8c460ae5ebac0a3a844a87a713f14b9c63177d05"
-ref = "refs/heads/demo/shared-preview-a"
+revision = "d02af85070981537869fe305a7696650614d32ed"
 
 [[components]]
 name = "service-d"
