@@ -1,7 +1,7 @@
 schema = 1
 graph = "graph_01kxknzjgae2svcyq8abk781ey"
 name = "dev"
-generation = 4
+generation = 5
 
 [[components]]
 name = "service-a"
@@ -48,4 +48,22 @@ valueJson = "InNoYTI1Njo1M2E4OTFmZGFlNzFkYjI0YTA5MmI1N2I2M2UwODcxYzdkMjNjNmFhNTA
 kind = "vcs"
 repository = "henosis-playground/service-e"
 revision = "f15d2da8c2e846a6bf4a4890990c5f890a088eb7"
+ref = "refs/heads/main"
+
+[[components]]
+name = "service-f"
+bundleDigest = "Sjcl+1ysAQgW/I23lVcRsJJ4vi2RVgtTmcMH/yJ/Q1o="
+
+[[components.inputBindings]]
+name = "assetsArtifact"
+valueJson = "InNoYTI1Njo5OTM3ZGU0ZTc3YzczMGFlNDJmMzE4Yzk4N2M3YjdmZDUyYTMzZDYzZDVkNWM1OGFhM2ZiNThkYTAzMjZkM2YwIg=="
+
+[[components.inputBindings]]
+name = "workerArtifact"
+valueJson = "InNoYTI1NjoxMTAzOGVjNjgyYTQ1YWU3YTFlMWE3YTM5MGVkMTc2NmM3YTdjODJiMmY0Y2Q1NWVjNGQyZDZhNDdhNzUyNDc1Ig=="
+
+[components.source]
+kind = "vcs"
+repository = "henosis-playground/service-f"
+revision = "16841dbf8c646b8e3ff449b0f421cb10087643d8"
 ref = "refs/heads/main"
