@@ -1,0 +1,15 @@
+schema = 1
+graph = "graph_01kxky2wryed8rm9rgj0n0aabm"
+name = "preview"
+generation = 1
+
+[[components]]
+name = "service-a"
+bundleDigest = "BAwdnPLVEJy/XG0PUg7bynKqRceOGeE/XCgQZd+yQyY="
+inputBindings = []
+
+[components.source]
+kind = "vcs"
+repository = "henosis-playground/service-a"
+revision = "768a750ab1cee9f3f7045638de41a33b946c37aa"
+ref = "refs/heads/MikeIvanichev-patch-1"
