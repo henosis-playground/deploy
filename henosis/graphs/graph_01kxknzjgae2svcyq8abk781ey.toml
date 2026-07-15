@@ -1,7 +1,7 @@
 schema = 1
 graph = "graph_01kxknzjgae2svcyq8abk781ey"
 name = "dev"
-generation = 1
+generation = 2
 
 [[components]]
 name = "service-a"
@@ -12,4 +12,15 @@ inputBindings = []
 kind = "vcs"
 repository = "henosis-playground/service-a"
 revision = "d02af85070981537869fe305a7696650614d32ed"
+ref = "refs/heads/main"
+
+[[components]]
+name = "service-d"
+bundleDigest = "RSe+DZZvWiX8ofu60MqBQTier/jOhL4bXl7BIryZ57o="
+inputBindings = []
+
+[components.source]
+kind = "vcs"
+repository = "henosis-playground/service-d"
+revision = "3a48ee15424d98a783fa59a80a6adcd8423b3933"
 ref = "refs/heads/main"
