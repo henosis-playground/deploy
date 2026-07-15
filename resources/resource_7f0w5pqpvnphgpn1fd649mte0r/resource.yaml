@@ -1,0 +1,37 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: app
+  namespace: service-b
+  labels:
+    henosis.dev/graph-id: graph_01kxky8x1afj09wvmk35917yak
+    henosis.dev/resource-id: resource_7f0w5pqpvnphgpn1fd649mte0r
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app.kubernetes.io/name: app
+  template:
+    metadata:
+      labels:
+        app.kubernetes.io/name: app
+    spec:
+      containers:
+      - env:
+        - name: UPSTREAM_PORT
+          value: '443'
+        - name: UPSTREAM_URL
+          value: https://api.service-a.svc.cluster.local/api/v3/healthz
+        image: ghcr.io/henosis-playground/service-b@sha256:d854fb4344684f8003e77e19461877df4d05976a04505f988098e2025753c04f
+        name: app
+        ports:
+        - containerPort: 3000
+          name: http
+        resources:
+          limits:
+            cpu: 250m
+            memory: 256Mi
+          requests:
+            cpu: 50m
+            memory: 64Mi
