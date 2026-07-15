@@ -1,0 +1,65 @@
+schema = 1
+graph = "graph_01kxkp2pypf909r9k5045awjd0"
+name = "shared-af-cycle-1"
+generation = 3
+
+[[components]]
+name = "service-a"
+bundleDigest = "KEobMpfzAC9lFRp0ETW3/N5re/voXG3ybnC44LxdVNM="
+inputBindings = []
+
+[components.source]
+kind = "vcs"
+repository = "henosis-playground/service-a"
+revision = "3a56e3dbbc88dfddcb9be45974afe0583687025e"
+
+[[components]]
+name = "service-b"
+bundleDigest = "Qee+v0SjRORyp684OI33VVzYlo/4E/jMiZQQe4/oqls="
+inputBindings = []
+
+[components.source]
+kind = "vcs"
+repository = "henosis-playground/service-b"
+revision = "674e225ea89d10324be548b86c0ff6de63fb6a04"
+
+[[components]]
+name = "service-d"
+bundleDigest = "RSe+DZZvWiX8ofu60MqBQTier/jOhL4bXl7BIryZ57o="
+inputBindings = []
+
+[components.source]
+kind = "vcs"
+repository = "henosis-playground/service-d"
+revision = "3a48ee15424d98a783fa59a80a6adcd8423b3933"
+
+[[components]]
+name = "service-e"
+bundleDigest = "uV8zhH9lD5rGnZX90txlG/jsQbI35Vb80SOLbWUGQj4="
+
+[[components.inputBindings]]
+name = "workerArtifact"
+valueJson = "InNoYTI1Njo2MjRhZDViNTYxYjJjMzU2MmNiNTIzNjRkNWFmMjkyNDAyZWM3MGM0MzI1NDQ1MDRkMjIwZDAwZTExNjE3N2U5Ig=="
+
+[components.source]
+kind = "vcs"
+repository = "henosis-playground/service-e"
+revision = "8f557fd14d16148285a667971be883e9819c661d"
+ref = "refs/heads/demo/shared-preview-e"
+
+[[components]]
+name = "service-f"
+bundleDigest = "Sjcl+1ysAQgW/I23lVcRsJJ4vi2RVgtTmcMH/yJ/Q1o="
+
+[[components.inputBindings]]
+name = "assetsArtifact"
+valueJson = "InNoYTI1NjoxNmE3YjUyNjJmNTExZWM1ODMxODA1NGM1MjQ0ZDJiMDgxMjIzZDgyY2YzZWQ4NmI4ZDUyZDNlNTVkMzcwY2E4Ig=="
+
+[[components.inputBindings]]
+name = "workerArtifact"
+valueJson = "InNoYTI1NjoxMTAzOGVjNjgyYTQ1YWU3YTFlMWE3YTM5MGVkMTc2NmM3YTdjODJiMmY0Y2Q1NWVjNGQyZDZhNDdhNzUyNDc1Ig=="
+
+[components.source]
+kind = "vcs"
+repository = "henosis-playground/service-f"
+revision = "16841dbf8c646b8e3ff449b0f421cb10087643d8"
