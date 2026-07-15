@@ -1,7 +1,7 @@
 schema = 1
 graph = "graph_01kxkp2pypf909r9k5045awjd0"
 name = "shared-af-cycle-1"
-generation = 1
+generation = 2
 
 [[components]]
 name = "service-a"
