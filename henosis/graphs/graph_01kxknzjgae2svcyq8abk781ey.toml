@@ -1,0 +1,15 @@
+schema = 1
+graph = "graph_01kxknzjgae2svcyq8abk781ey"
+name = "dev"
+generation = 1
+
+[[components]]
+name = "service-a"
+bundleDigest = "BAwdnPLVEJy/XG0PUg7bynKqRceOGeE/XCgQZd+yQyY="
+inputBindings = []
+
+[components.source]
+kind = "vcs"
+repository = "henosis-playground/service-a"
+revision = "d02af85070981537869fe305a7696650614d32ed"
+ref = "refs/heads/main"
