@@ -1,0 +1,38 @@
+schema = 1
+graph = "graph_01kxkx0r9wft9thrxvw0wqw1e9"
+name = "shared-af-cycle-2"
+generation = 1
+
+[[components]]
+name = "service-a"
+bundleDigest = "BAwdnPLVEJy/XG0PUg7bynKqRceOGeE/XCgQZd+yQyY="
+inputBindings = []
+
+[components.source]
+kind = "vcs"
+repository = "henosis-playground/service-a"
+revision = "d02af85070981537869fe305a7696650614d32ed"
+
+[[components]]
+name = "service-d"
+bundleDigest = "RSe+DZZvWiX8ofu60MqBQTier/jOhL4bXl7BIryZ57o="
+inputBindings = []
+
+[components.source]
+kind = "vcs"
+repository = "henosis-playground/service-d"
+revision = "3a48ee15424d98a783fa59a80a6adcd8423b3933"
+
+[[components]]
+name = "service-e"
+bundleDigest = "uV8zhH9lD5rGnZX90txlG/jsQbI35Vb80SOLbWUGQj4="
+
+[[components.inputBindings]]
+name = "workerArtifact"
+valueJson = "InNoYTI1Njo0Zjg0Yjc2ZmI1ZWJlNjA1YTIxNjZmYmVhODE3ZmM3Y2E2YjRkMTNjMjdiM2U3NzE0N2RjZGQxN2NkYzgzZjAyIg=="
+
+[components.source]
+kind = "vcs"
+repository = "henosis-playground/service-e"
+revision = "5411d4ca3bb9589dbb9f01554a7ab49dafb06f38"
+ref = "refs/heads/demo/shared-preview-e"
