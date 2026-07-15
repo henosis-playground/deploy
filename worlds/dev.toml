@@ -1,7 +1,0 @@
-[environment]
-id = "dev"
-
-[components.benchmark]
-repo = "henosis-playground/platform"
-ref = "d2208b21e66b7026c596dba608214786b97a29b9"
-digest = "sha256:0000000000000000000000000000000000000000000000000000000000000000"
