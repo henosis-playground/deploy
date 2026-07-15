@@ -1,0 +1,25 @@
+schema = 1
+graph = "graph_01kxky8x1afj09wvmk35917yak"
+name = "preview"
+generation = 1
+
+[[components]]
+name = "service-a"
+bundleDigest = "BAwdnPLVEJy/XG0PUg7bynKqRceOGeE/XCgQZd+yQyY="
+inputBindings = []
+
+[components.source]
+kind = "vcs"
+repository = "henosis-playground/service-a"
+revision = "d02af85070981537869fe305a7696650614d32ed"
+
+[[components]]
+name = "service-b"
+bundleDigest = "Qee+v0SjRORyp684OI33VVzYlo/4E/jMiZQQe4/oqls="
+inputBindings = []
+
+[components.source]
+kind = "vcs"
+repository = "henosis-playground/service-b"
+revision = "8eadfb3a12c23ae09120065b7f7cff616bfc840a"
+ref = "refs/heads/MikeIvanichev-patch-1"
