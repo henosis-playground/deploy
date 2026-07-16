@@ -1,7 +1,7 @@
 schema = 1
 graph = "graph_01kxknzjgae2svcyq8abk781ey"
 name = "dev"
-generation = 5
+generation = 6
 
 [[components]]
 name = "service-a"
@@ -38,7 +38,7 @@ ref = "refs/heads/main"
 
 [[components]]
 name = "service-e"
-bundleDigest = "RI01S1iEybmIUHbLqzalEm4r4SXnUy81QHkfYkWpe88="
+bundleDigest = "dYkYhLh0ZYOyewgfmrdIk4eUe8pQ47lht8R3QHQsfwY="
 
 [[components.inputBindings]]
 name = "workerEntry"
@@ -48,7 +48,7 @@ valueJson = "InNoYTI1Njo1M2E4OTFmZGFlNzFkYjI0YTA5MmI1N2I2M2UwODcxYzdkMjNjNmFhNTA
 kind = "vcs"
 repository = "henosis-playground/service-e"
 revision = "0842b194c3b710053231e0df61fa862044f59b8b"
-ref = "refs/heads/d26-live-skew-consumer"
+ref = "refs/heads/main"
 
 [[components]]
 name = "service-f"
