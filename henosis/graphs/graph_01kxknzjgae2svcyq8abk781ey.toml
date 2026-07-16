@@ -40,7 +40,9 @@ ref = "refs/heads/d26-live-baseline"
 name = "service-e"
 bundleDigest = "RI01S1iEybmIUHbLqzalEm4r4SXnUy81QHkfYkWpe88="
 
-inputBindings = []
+[[components.inputBindings]]
+name = "workerEntry"
+valueJson = "InNoYTI1Njo1M2E4OTFmZGFlNzFkYjI0YTA5MmI1N2I2M2UwODcxYzdkMjNjNmFhNTA2MTk1YTgyN2M1OTQwYTQyMTM2NWM4Ig=="
 
 [components.source]
 kind = "vcs"
@@ -52,7 +54,13 @@ ref = "refs/heads/d26-live-skew-consumer"
 name = "service-f"
 bundleDigest = "d65PjP3JYayrvv+ppnfzS+wA0uoPrH4bVtJWxEsdYcM="
 
-inputBindings = []
+[[components.inputBindings]]
+name = "workerAssets"
+valueJson = "InNoYTI1NjoxNmE3YjUyNjJmNTExZWM1ODMxODA1NGM1MjQ0ZDJiMDgxMjIzZDgyY2YzZWQ4NmI4ZDUyZDNlNTVkMzcwY2E4Ig=="
+
+[[components.inputBindings]]
+name = "workerEntry"
+valueJson = "InNoYTI1NjoxMTAzOGVjNjgyYTQ1YWU3YTFlMWE3YTM5MGVkMTc2NmM3YTdjODJiMmY0Y2Q1NWVjNGQyZDZhNDdhNzUyNDc1Ig=="
 
 [components.source]
 kind = "vcs"
