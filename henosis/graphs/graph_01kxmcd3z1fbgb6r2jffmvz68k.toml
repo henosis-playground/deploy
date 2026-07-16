@@ -1,7 +1,7 @@
 schema = 1
 graph = "graph_01kxmcd3z1fbgb6r2jffmvz68k"
 name = "d26-skew-acceptance"
-generation = 1
+generation = 2
 
 [[components]]
 name = "service-a"
@@ -12,4 +12,3 @@ inputBindings = []
 kind = "vcs"
 repository = "henosis-playground/service-a"
 revision = "a4e95b70b0c7b1807dd7174a2518c18e5181ff01"
-ref = "refs/heads/d26-live-skew-producer"
