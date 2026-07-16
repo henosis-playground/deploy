@@ -1,0 +1,15 @@
+schema = 1
+graph = "graph_01kxmb4843er8r5rnrnwk2s3wz"
+name = "preview"
+generation = 1
+
+[[components]]
+name = "service-a"
+bundleDigest = "T88c4AAAOKw1Qqu5vpz6TgThWOzjV/X2jduMn8mZDx8="
+inputBindings = []
+
+[components.source]
+kind = "vcs"
+repository = "https://github.com/henosis-playground/service-a.git"
+revision = "a4e95b70b0c7b1807dd7174a2518c18e5181ff01"
+ref = "origin/d26-live-skew-producer"
