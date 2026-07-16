@@ -5,65 +5,57 @@ generation = 1
 
 [[components]]
 name = "service-a"
-bundleDigest = "BAwdnPLVEJy/XG0PUg7bynKqRceOGeE/XCgQZd+yQyY="
+bundleDigest = "vDaeqEwnMpa39kd8WhHENsd4pa6o7Ia0G2gxI63MB2c="
 inputBindings = []
 
 [components.source]
 kind = "vcs"
 repository = "henosis-playground/service-a"
-revision = "d02af85070981537869fe305a7696650614d32ed"
-ref = "refs/heads/main"
+revision = "93c8f044d2f6464d5f9345fa778ba34c92d99544"
+ref = "refs/heads/d26-live-baseline"
 
 [[components]]
 name = "service-b"
-bundleDigest = "Qee+v0SjRORyp684OI33VVzYlo/4E/jMiZQQe4/oqls="
+bundleDigest = "KnfXtOwo0Y9hpkLbxJRC2RvrUSaQT6CH+Kw3ZWlGqeo="
 inputBindings = []
 
 [components.source]
 kind = "vcs"
 repository = "henosis-playground/service-b"
-revision = "674e225ea89d10324be548b86c0ff6de63fb6a04"
-ref = "refs/heads/main"
+revision = "4b5b3c8af620a78eb9eab508e5c33e8f95514e93"
+ref = "refs/heads/d26-live-baseline"
 
 [[components]]
 name = "service-d"
-bundleDigest = "RSe+DZZvWiX8ofu60MqBQTier/jOhL4bXl7BIryZ57o="
+bundleDigest = "Qh88B6Nq/UbUpri2LwDo7H+1+208JtHUczZ/aXLGv28="
 inputBindings = []
 
 [components.source]
 kind = "vcs"
 repository = "henosis-playground/service-d"
-revision = "3a48ee15424d98a783fa59a80a6adcd8423b3933"
-ref = "refs/heads/main"
+revision = "c70c724c0382fd5c806e5a2b98b1dd24645f98e2"
+ref = "refs/heads/d26-live-baseline"
 
 [[components]]
 name = "service-e"
-bundleDigest = "uV8zhH9lD5rGnZX90txlG/jsQbI35Vb80SOLbWUGQj4="
+bundleDigest = "RI01S1iEybmIUHbLqzalEm4r4SXnUy81QHkfYkWpe88="
 
-[[components.inputBindings]]
-name = "workerArtifact"
-valueJson = "InNoYTI1Njo1M2E4OTFmZGFlNzFkYjI0YTA5MmI1N2I2M2UwODcxYzdkMjNjNmFhNTA2MTk1YTgyN2M1OTQwYTQyMTM2NWM4Ig=="
+inputBindings = []
 
 [components.source]
 kind = "vcs"
 repository = "henosis-playground/service-e"
-revision = "f15d2da8c2e846a6bf4a4890990c5f890a088eb7"
-ref = "refs/heads/main"
+revision = "0842b194c3b710053231e0df61fa862044f59b8b"
+ref = "refs/heads/d26-live-skew-consumer"
 
 [[components]]
 name = "service-f"
-bundleDigest = "Sjcl+1ysAQgW/I23lVcRsJJ4vi2RVgtTmcMH/yJ/Q1o="
+bundleDigest = "d65PjP3JYayrvv+ppnfzS+wA0uoPrH4bVtJWxEsdYcM="
 
-[[components.inputBindings]]
-name = "assetsArtifact"
-valueJson = "InNoYTI1Njo5OTM3ZGU0ZTc3YzczMGFlNDJmMzE4Yzk4N2M3YjdmZDUyYTMzZDYzZDVkNWM1OGFhM2ZiNThkYTAzMjZkM2YwIg=="
-
-[[components.inputBindings]]
-name = "workerArtifact"
-valueJson = "InNoYTI1NjoxMTAzOGVjNjgyYTQ1YWU3YTFlMWE3YTM5MGVkMTc2NmM3YTdjODJiMmY0Y2Q1NWVjNGQyZDZhNDdhNzUyNDc1Ig=="
+inputBindings = []
 
 [components.source]
 kind = "vcs"
 repository = "henosis-playground/service-f"
-revision = "16841dbf8c646b8e3ff449b0f421cb10087643d8"
-ref = "refs/heads/main"
+revision = "2dcb7231401878e0383ad40c4962c334faa5797c"
+ref = "refs/heads/d26-live-baseline"
