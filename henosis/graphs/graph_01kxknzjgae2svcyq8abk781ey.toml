@@ -1,7 +1,7 @@
 schema = 1
 graph = "graph_01kxknzjgae2svcyq8abk781ey"
 name = "dev"
-generation = 6
+generation = 7
 
 [[components]]
 name = "service-a"
@@ -52,7 +52,7 @@ ref = "refs/heads/main"
 
 [[components]]
 name = "service-f"
-bundleDigest = "d65PjP3JYayrvv+ppnfzS+wA0uoPrH4bVtJWxEsdYcM="
+bundleDigest = "OfrqPB0Y6hT5XKSQizYPBBkuYjKUWe/ja6yQ6iV7T5Y="
 
 [[components.inputBindings]]
 name = "workerAssets"
@@ -66,4 +66,4 @@ valueJson = "InNoYTI1NjoxMTAzOGVjNjgyYTQ1YWU3YTFlMWE3YTM5MGVkMTc2NmM3YTdjODJiMmY
 kind = "vcs"
 repository = "henosis-playground/service-f"
 revision = "2dcb7231401878e0383ad40c4962c334faa5797c"
-ref = "refs/heads/d26-live-baseline"
+ref = "refs/heads/main"
