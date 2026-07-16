@@ -1,7 +1,7 @@
 schema = 1
 graph = "graph_01kxknzjgae2svcyq8abk781ey"
 name = "dev"
-generation = 1
+generation = 2
 
 [[components]]
 name = "service-a"
