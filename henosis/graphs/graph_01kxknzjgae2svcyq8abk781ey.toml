@@ -1,7 +1,7 @@
 schema = 1
 graph = "graph_01kxknzjgae2svcyq8abk781ey"
 name = "dev"
-generation = 2
+generation = 3
 
 [[components]]
 name = "service-a"
@@ -12,7 +12,7 @@ inputBindings = []
 kind = "vcs"
 repository = "henosis-playground/service-a"
 revision = "93c8f044d2f6464d5f9345fa778ba34c92d99544"
-ref = "refs/heads/d26-live-baseline"
+ref = "refs/heads/main"
 
 [[components]]
 name = "service-b"
