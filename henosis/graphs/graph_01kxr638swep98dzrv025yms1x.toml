@@ -1,7 +1,7 @@
 schema = 1
 graph = "graph_01kxr638swep98dzrv025yms1x"
 name = "demo-live"
-generation = 5
+generation = 6
 
 [[components]]
 name = "service-a"
@@ -22,21 +22,3 @@ inputBindings = []
 kind = "vcs"
 repository = "henosis-playground/service-b"
 revision = "a68263150aea2e452a5eeb79a2fbc6f98f8f1af0"
-
-[[components]]
-name = "service-f"
-bundleDigest = "dN2P8+/rrITilxBBzvpnBKmzbCksB6V+u6dyA1Jjnds="
-
-[[components.inputBindings]]
-name = "workerAssets"
-valueJson = "InNoYTI1NjoxNmE3YjUyNjJmNTExZWM1ODMxODA1NGM1MjQ0ZDJiMDgxMjIzZDgyY2YzZWQ4NmI4ZDUyZDNlNTVkMzcwY2E4Ig=="
-
-[[components.inputBindings]]
-name = "workerEntry"
-valueJson = "InNoYTI1NjoxMTAzOGVjNjgyYTQ1YWU3YTFlMWE3YTM5MGVkMTc2NmM3YTdjODJiMmY0Y2Q1NWVjNGQyZDZhNDdhNzUyNDc1Ig=="
-
-[components.source]
-kind = "vcs"
-repository = "henosis-playground/service-f"
-revision = "118285bbc8e51fdd4b3439304dad4a9ca088ab6a"
-ref = "refs/heads/demo/cloudflare-live-helper"
