@@ -1,7 +1,7 @@
 schema = 1
 graph = "graph_01kxr638swep98dzrv025yms1x"
 name = "demo-live"
-generation = 2
+generation = 3
 
 [[components]]
 name = "service-a"
@@ -39,4 +39,3 @@ valueJson = "InNoYTI1NjoxMTAzOGVjNjgyYTQ1YWU3YTFlMWE3YTM5MGVkMTc2NmM3YTdjODJiMmY
 kind = "vcs"
 repository = "henosis-playground/service-f"
 revision = "ac950f4d40f7bb44fb391f5126b19d420d4d25fc"
-ref = "refs/heads/demo/cloudflare-live-helper"
