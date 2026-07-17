@@ -1,0 +1,8 @@
+---
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: service-b
+  labels:
+    henosis.dev/graph-id: graph_01kxqqcfdaf7gbef3h9d94rzzc
+    henosis.dev/resource-id: resource_0n0794xqwv5ky12p3nb187efj0
