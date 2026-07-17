@@ -1,7 +1,7 @@
 schema = 1
 graph = "graph_01kxqtxyasek1bfd6tp53f8vvd"
 name = "demo-live-2"
-generation = 1
+generation = 2
 
 [[components]]
 name = "service-a"
@@ -22,4 +22,3 @@ inputBindings = []
 kind = "vcs"
 repository = "henosis-playground/service-b"
 revision = "a68263150aea2e452a5eeb79a2fbc6f98f8f1af0"
-ref = "refs/heads/demo/compatible-observability"
