@@ -1,0 +1,32 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: api
+  namespace: service-a
+  labels:
+    henosis.dev/graph-id: graph_01kxqqcfdaf7gbef3h9d94rzzc
+    henosis.dev/resource-id: resource_78brep6t1afgebwregjvq57anm
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app.kubernetes.io/name: api
+  template:
+    metadata:
+      labels:
+        app.kubernetes.io/name: api
+    spec:
+      containers:
+      - image: ghcr.io/henosis-playground/service-a@sha256:f5903cb0423e3ddc53d4820c7d8e06171d11875c06cbe13b6be53726dcca3826
+        name: api
+        ports:
+        - containerPort: 3000
+          name: http
+        resources:
+          limits:
+            cpu: 500m
+            memory: 512Mi
+          requests:
+            cpu: 100m
+            memory: 128Mi
